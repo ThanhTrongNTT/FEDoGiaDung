@@ -13,32 +13,31 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
 		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
 	<link rel="icon" href="images/AnhCat/logo.png" type="image/png">
 	<title>HT Houseware</title>
 </head>
 
-<body class="bgc">
+<body>
 	<div class="wrap">
 		<header class="">
 			<nav class="container">
 				<div class="logo">
-					<a href="index.html"><img src="images/AnhCat/logo.png" alt="Xưởng mộc giá tốt hoàng hoan"></a>
+					<a href="../index.html"><img src="images/AnhCat/logo.png" alt="Xưởng mộc giá tốt hoàng hoan"></a>
 				</div>
 				<div class="menu" data-show="0">
 					<div class="d-flex h-100 justify-content-center align-items-center">
 						<ul>
-							<li><a href="index.html"> Trang chủ </a></li>
+							<li><a href="../index.html"> Trang chủ </a></li>
 							<li><a href="about.html"> Giới thiệu </a></li>
 							<li><a href="product.html"> Sản phẩm </a></li>
 							<li><a href="news.html"> Tin tức </a></li>
 							<li><a href="partner.html"> Đối tác </a></li>
-							<li><a href="contact.html"> Liên hệ </a></li>
+							<li class="active"><a href="contact.html"> Liên hệ </a></li>
+							<li><a href="login.html"> Đăng Nhập </a></li>
 						</ul>
 					</div>
-				</div>
 
+				</div>
 				<div class="d-flex align-items-center d-block d-lg-none">
 					<button class="res-menu d-block d-lg-none">
 						<span></span>
@@ -46,24 +45,47 @@
 						<span></span>
 					</button>
 				</div>
+
 			</nav>
 		</header>
 
-		<!-- CONTENT -->
-		<div class="container">
-			<div class="breadcumb">
-				<div class="d-flex align-items-center">
-					<p> <a href="#">Trang chủ </a> </p>
-					<span> <i class="fas fa-angle-right"></i> </span>
-					<p><a href="#">Chi tiết bài viết</a></p>
-				</div>
+		<!-- BANNER -->
+		<div class="banner-abt-wrap">
+			<div class="img">
+				<img src="images/AnhCat/banner-lien-he.png" alt="Liên hệ với xưởng mộc giá tốt" class="w-100">
+			</div>
+			<div class="banner-content">
+				<h1 class="text-center">liên hệ</h1>
 			</div>
 		</div>
 
-		<div class="news-detail">
-			<div class="row">
-				<div class="col-md-8 content-left"></div>
-				<div class="col-md-4 content-right"></div>
+		<!-- CONTENT -->
+		<div class="container">
+			<div class="contact-box">
+				<div class="box px-0  px-md-4">
+					<div class="cont-box d-flex">
+						<div class="row">
+							<div class="col-lg-6 ">
+								<div class="img d-none d-lg-block">
+									<img src="images/AnhCat/lien-he-img1.png" alt="Liên hệ" class="w-100">
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<div class="content">
+									<p class="title lien-he mb-2"> liên hệ với chúng tôi </p>
+									<div class="form-group lien-he">
+										<input type="text" name="TITLE" placeholder="Họ và tên">
+										<input type="text" name="EMAIL" placeholder="Email">
+										<input type="text" name="PHONE" placeholder="Số điện thoại">
+										<input type="text" name="CONTENT" placeholder="Nội dung">
+										<br>
+										<button class="contact-send"> Gửi </button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 
@@ -140,27 +162,5 @@
 	crossorigin="anonymous"></script>
 <!-- Script -->
 <script type="text/javascript" src="js/javascript.js"></script>
-
-<script type="text/javascript">
-	function currentDiv(n) {
-		showDivs(slideIndex = n);
-	}
-
-	function showDivs(n) {
-		var i;
-		var x = document.getElementsByClassName("mySlides");
-		var dots = document.getElementsByClassName("demo");
-		if (n > x.length) { slideIndex = 1 }
-		if (n < 1) { slideIndex = x.length }
-		for (i = 0; i < x.length; i++) {
-			x[i].style.display = "none";
-		}
-		for (i = 0; i < dots.length; i++) {
-			dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
-		}
-		x[slideIndex - 1].style.display = "block";
-		dots[slideIndex - 1].className += " w3-opacity-off";
-	}
-</script>
 
 </html>

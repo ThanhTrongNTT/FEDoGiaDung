@@ -60,7 +60,12 @@ header img {
   height: 5em;
   transition: all 0.2s ease-out;
 }
-
+header .Cart-icon {
+  margin-left: 50px;
+  margin-bottom: 5px;
+  height: 35px;
+  width: 35px;
+}
 header nav {
   display: flex;
   justify-content: space-between;

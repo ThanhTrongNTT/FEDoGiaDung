@@ -1,14 +1,34 @@
-const data = {
-  email: "tronglagi111@gmail.com",
-  password: "123456",
-};
 
-const SendInfo = JSON.stringify({
-  firstName: "trong",
-  lastName: "nguyen",
-  email: "tronglagi111123@gmail.com",
-  password: "123456",
+let email = document.querySelector(".email-input");
+let pass = document.querySelector(".pass-input");
+document.querySelector(".btn-login").addEventListener("click", function () {
+  console.log(email.value);
+  let data = {
+    email: email.value,
+    password: pass.value,
+  };
+  console.log(data);
+  login(data);
+
+  localStorage.setItem("IdUser", dataAfterLogin.id);
+  localStorage.setItem("emailUser",dataAfterLogin.email);
 });
+
+let dataAfterLogin;
+function login(data){
+var xhr = new XMLHttpRequest();
+xhr.open("POST", "http://localhost:8080/api/v1/login", false);
+xhr.setRequestHeader('content-type', 'application/json');
+xhr.send(JSON.stringify(data));
+dataAfterLogin = JSON.parse(xhr.responseText); //data is now a javascript object full of the API data
+console.log(dataAfterLogin)
+}
+// const SendInfo = JSON.stringify({
+//   firstName: "trong",
+//   lastName: "nguyen",
+//   email: "tronglagi111123@gmail.com",
+//   password: "123456",
+// });
 
 
 // function render(items) {

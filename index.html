@@ -48,7 +48,7 @@
                 <li><a href="user/partner.html"> Đối tác </a></li>
                 <li><a href="user/contact.html"> Liên hệ </a></li>
                 <li id="login-page">
-                  <a href="user/login.html"> Đăng Nhập </a>
+                  <a href="user/login.html" id="profile"> Đăng Nhập </a>
                 </li>
               </ul>
             </div>
@@ -262,7 +262,7 @@
         <div class="hot-product-wrap">
           <h2 class="header-prd">Sản phẩm nổi bật</h2>
 
-          <div class="slide-prd">
+          <div class="slide-prd" id="list-product">
             <div class="product">
               <div class="img">
                 <img
@@ -742,6 +742,8 @@
 
   <!-- Script -->
   <script type="text/javascript" src="user/js/javascript.js"></script>
+  <script type="text/javascript" src="api/product/getAllProduct.js"></script>
+
   <script type="text/javascript" src="test.js"></script>
-  <!-- <script type="text/javascript" src="api/user/login.js"></script> -->
+  <script type="text/javascript" src="api/loadData.js"></script>
 </html>

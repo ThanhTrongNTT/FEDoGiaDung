@@ -9,9 +9,29 @@ document.querySelector(".btn-login").addEventListener("click", function () {
   };
   console.log(data);
   login(data);
+  console.log(dataAfterLogin)
+  dataAfterLogin.password = null;
+  sessionStorage.clear();
+  localStorage.clear();
+  sessionStorage.setItem("user", JSON.stringify(dataAfterLogin));
+  if(JSON.parse(sessionStorage.getItem('user')).email!== undefined){
+    alert("Login success!")
+    window.location.replace("http://127.0.0.1:5500/index.html");
+  }else{
+    document.querySelector('.email-input').value="";
+    document.querySelector('.pass-input').value="";
+    document.querySelector('.email-input').focus();
+    alert("Login not successfully!")
+  }
+  // console.log(JSON.parse(sessionStorage.getItem('user')));  
+  
+  // Put the object into storage
+  // sessionStorage.setItem('roles', JSON.stringify(dataAfterLogin.roles));
 
-  localStorage.setItem("IdUser", dataAfterLogin.id);
-  localStorage.setItem("emailUser",dataAfterLogin.email);
+// Retrieve the object from storage
+// var retrievedObject = sessionStorage.getItem('roles');
+
+// console.log('retrievedObject: ', JSON.parse(retrievedObject));
 });
 
 let dataAfterLogin;
@@ -22,13 +42,11 @@ xhr.setRequestHeader('content-type', 'application/json');
 xhr.send(JSON.stringify(data));
 dataAfterLogin = JSON.parse(xhr.responseText); //data is now a javascript object full of the API data
 console.log(dataAfterLogin)
+
+if(dataAfterLogin.error === "Not Found"){
+  alert(dataAfterLogin.message)
 }
-// const SendInfo = JSON.stringify({
-//   firstName: "trong",
-//   lastName: "nguyen",
-//   email: "tronglagi111123@gmail.com",
-//   password: "123456",
-// });
+}
 
 
 // function render(items) {

@@ -28,27 +28,31 @@ $("#btnAddOrUpdate").click(function (e) {
     if (document.getElementById("typeProduct").value === element.name) {
       data["typeProduct"] = element;
     }
-    xhr.open("POST", "http://localhost:8080/api/v1/product/save", false);
-    xhr.setRequestHeader("content-type", "application/json");
-    const ref = firebase.storage().ref();
-    const file = document.querySelector("#image").files[0];
-    const metadata = {
-      contentType: file.type,
-    };
-    const name = file.name;
-    const uploadIMG = ref.child(name).put(file, metadata);
-    uploadIMG
-      .then((snapshort) => snapshort.ref.getDownloadURL())
-      .then((url) => {
-        // console.log(url);
-        data["pic"] = url;
-        console.log("data:");
-        console.log(JSON.stringify(data));
-        // console.log(data);
-        xhr.send(JSON.stringify(data));
-      })
-      .catch(console.error);
   });
+
+  xhr.open("POST", "http://localhost:8080/api/v1/product/save", false);
+  xhr.setRequestHeader("content-type", "application/json");
+  const ref = firebase.storage().ref();
+  const file = document.querySelector("#image").files[0];
+  const metadata = {
+    contentType: file.type,
+  };
+  const name = file.name;
+  const uploadIMG = ref.child(name).put(file, metadata);
+  uploadIMG
+    .then((snapshort) => snapshort.ref.getDownloadURL())
+    .then((url) => {
+      // console.log(url);
+      data["pic"] = url;
+      console.log(JSON.stringify(data));
+        
+    })
+    .catch(console.error);
+      xhr.send(JSON.stringify(data));
+      document.querySelector('.productName').value="";
+      document.querySelector('.des').value="";
+      document.querySelector('.productName').focus();
+    
 });
 
 let dataTypes;

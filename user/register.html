@@ -61,35 +61,31 @@
                 </div>
 
                 <div class="col-md-6 col-xs-12 wrapbox-account wrapbox-content-account">
+                    <form id="formUser">
                     <div class="user-box">
                         <div class="user-input">
-                            <input required="" type="text" value="" name="user-name" placeholder="Họ và tên"
+                            <input required="" type="text" value="" name="firstName" placeholder="First Name"
                                 id="user-name" size="30">
                         </div>
                         <div class="user-input">
-                            <input required="" type="text" value="" name="user-address" id="user-address"
-                                placeholder="Địa chỉ">
-                        </div>
-                        <div id="gender" class="user-input">
-
-                            <input id="radio1" type="radio" value="0" name="customer[gender]">
-                            <label for="radio1">Nữ</label>
-
-                            <input id="radio2" type="radio" value="1" name="customer[gender]">
-                            <label for="radio2">Nam</label>
-
+                            <input required="" type="text" value="" name="lastName" id="user-address"
+                                placeholder="Last Name">
                         </div>
                         <div class="user-input">
-                            <input required="" type="email" value="" name="user-email" id="user-email"
+                            <input required="" type="email" value="" name="email" id="user-email"
                                 placeholder="Email">
                         </div>
                         <div class="user-input">
-                            <input required="" type="password" value="" name="user-password" id="user-password"
+                            <input required="" type="password" value="" name="password" id="user-password"
                                 placeholder="Mật khẩu" size="16">
+                        </div>
+                        <div class="user-input">
+                            <input required="" type="password" value=""  id="user-confirmPassword"
+                                placeholder="Xác nhận mật khẩu" size="16">
                         </div>
                         <div class="user-action">
                             <div class="login-btn-wrap button dark">
-                                <input class="btn btn-login" type="submit" value="Đăng ký">
+                                <input class="btn btn-login" type="submit" id="btnRegister" value="Đăng ký">
                             </div>
 
                             <a href="/" class="come-back"><i class="fas fa-long-arrow-alt-left mr-4"></i> Quay lại trang
@@ -97,6 +93,7 @@
 
                         </div>
                     </div>
+                </form>
                 </div>
             </div>
         </div>
@@ -171,7 +168,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
-
+        
+        <script type="text/javascript" src="../api/user/register.js"></script>
     <!-- Script -->
     <script type="text/javascript" src="js/javascript.js"></script>
 </body>

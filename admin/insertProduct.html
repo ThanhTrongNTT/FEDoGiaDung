@@ -391,7 +391,7 @@
                             <input
                               type="text"
                               name="name"
-                              class="form-control"
+                              class="form-control productName"
                               id="basic-default-fullname"
                               placeholder="Tên sản phẩm"
                             />
@@ -405,7 +405,7 @@
                             <input
                               type="text"
                               name="description"
-                              class="form-control"
+                              class="form-control des"
                               id="basic-default-company"
                               placeholder="Mô tả về sản phẩm"
                             />
@@ -414,7 +414,7 @@
                             <label for="defaultSelect" class="form-label"
                               >Status</label
                             >
-                            <select id="defaultSelect" name="status" class="form-select">
+                            <select id="defaultSelect" name="status" class="form-select status">
                               <option>Default select</option>
                               <option value="1">Còn Hàng</option>
                               <option value="0">Ngưng sản xuất</option>
@@ -425,7 +425,7 @@
                               >Price</label
                             >
                             <input
-                              class="form-control"
+                              class="form-control price"
                               type="number"
                               name="price"
                               value="100000"
@@ -440,7 +440,7 @@
                             </select>
                           </div>
                           <div class="mb-3">
-                            <label for="formFile" class="form-label"
+                            <label for="formFile" class="form-label image"
                               >Product Image</label
                             >
                             <input
@@ -488,6 +488,9 @@
 
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
+
+        <!-- Check Login -->
+        <script src="../api/admin/loadAdminPage.js"></script>
 
     <!-- Page JS -->
 

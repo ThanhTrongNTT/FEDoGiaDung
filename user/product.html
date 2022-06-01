@@ -80,14 +80,14 @@
 			</div>
 		</div>
 		<!-- CONTENT -->
-		<div class="product-wrap container">
+		<div class="product-wrap container" id="list-types">
 			<div class="list-product">
 				<div class="d-flex justify-content-between box-title">
 					<h2 class="header-prod"> PHÒNG KHÁCH </h2>
 					<p class="see-all"> <a href="#"> Xem tất cả </a></p>
 				</div>
-				<div class="box-product">
-					<div class="row">
+				<div class="box-product" >
+					<div class="row" id="list-products">
 						<div class="col-lg-3 col-sm-6">
 							<div class="product">
 								<div class="img">
@@ -95,7 +95,7 @@
 										class="img-fluid">
 								</div>
 								<div class="info">
-									<p class="name"> <a href="#"> Bàn uống nước</a> </p>
+									<p class="name"> <a href="/user/detail.html"> Bàn uống nước</a> </p>
 									<p class="vote">
 										<span><i class="fas fa-star"></i></span>
 										<span><i class="fas fa-star"></i></span>
@@ -382,6 +382,7 @@
 	<div id="site-overlay" class="site-overlay"></div>
 </body>
 
+<script type="text/javascript" src="../api/product/getProductIntoPage.js"></script>
 <!-- Font Awesome -->
 <script src="https://kit.fontawesome.com/bf61fecb7c.js" crossorigin="anonymous"></script>
 <!-- Bootstrap JS -->

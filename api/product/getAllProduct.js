@@ -6,33 +6,34 @@ let data1 = JSON.parse(xhr.responseText); //data is now a javascript object full
 console.log(data1);
 render(data1)
 
-// function render(items) {
-//   let htmlDiv = document.getElementById("list-product");
-//   let content = items.map(function (item) {
-//     return `
-//     <div class="product">
-//         <div class="img">
-//             <img
-//                 src="${item.pic}"
-//                 alt="${item.name}"
-//                 class="img-fluid"
-//             />
-//         </div>
-//     <div class="info">
-//       <p class="name"><a href="#">${item.name}</a></p>
-//       <p class="vote">
-//         <span><i class="fas fa-star"></i></span>
-//         <span><i class="fas fa-star"></i></span>
-//         <span><i class="fas fa-star"></i></span>
-//         <span><i class="fas fa-star"></i></span>
-//         <span><i class="fas fa-star"></i></span>
-//       </p>
-//       <p class="desc">${item.description}</p>
+function render(items) {
+  let htmlDiv = document.getElementById("list-product");
+  let content = items.map(function (item) {
+    item.price = item.price.toLocaleString('vi', {style : 'currency', currency : 'VND'});
+    return `
+    <div class="product">
+        <div class="img">
+            <img
+                src="${item.pic}"
+                alt="${item.name}"
+                class="img-fluid"
+            />
+        </div>
+    <div class="info">
+      <p class="name"><a href="#">${item.name}</a></p>
+      <p class="vote">
+        <span><i class="fas fa-star"></i></span>
+        <span><i class="fas fa-star"></i></span>
+        <span><i class="fas fa-star"></i></span>
+        <span><i class="fas fa-star"></i></span>
+        <span><i class="fas fa-star"></i></span>
+      </p>
+      <p class="desc">${item.description}</p>
 
-//       <p class="price"><span> ${item.price} </span> VNĐ</p>
-//     </div>
-//   </div>    
-//     `;
-//   });
-//   htmlDiv.innerHTML = content;
-// }
+      <p class="price"><span> ${item.price} </span> VNĐ</p>
+    </div>
+  </div>    
+    `;
+  });
+  htmlDiv.innerHTML = content.join("");
+}
